@@ -6,13 +6,13 @@ Easy create a Data Lake / Delta Lake!
   <img align="left" alt="Wise Up Data's Instagram" width="22px" src="https://raw.githubusercontent.com/wiseupdata/wiseupdata/main/assets/instagram.png" />   
 </a> 
 <a href="https://github.com/wiseupdata/wiseupdata">
-  <img align="left" alt="wise Up Data's Discord" width="22px" src="https://github.com/wiseupdata/wiseupdata/blob/main/assets/discord.svg" />
+  <img align="left" alt="wise Up Data's Discord" width="22px" src="https://github.com/wiseupdata/wiseupdata/blob/main/assets/discord.png" />
 </a>
 <a href="https://github.com/wiseupdata/wiseupdata">
   <img align="left" alt="wise Up Data | Twitter" width="22px" src="https://github.com/wiseupdata/wiseupdata/blob/main/assets/twitter.svg" />
 </a>
 <a href="https://github.com/wiseupdata/wiseupdata">
-  <img align="left" alt="wise Up Data's LinkedIN" width="22px" src="https://raw.githubusercontent.com/wiseupdata/wiseupdata/200536ac97c85161cdfea6de4fc9b271ba197c2d/assets/linkedin.svg" />
+  <img align="left" alt="wise Up Data's LinkedIN" width="22px" src="https://raw.githubusercontent.com/wiseupdata/wiseupdata/main/assets/linkedin.png" />
 </a>
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=wiseupdata.terraform-oci-datalake&left_color=green&right_color=black)
