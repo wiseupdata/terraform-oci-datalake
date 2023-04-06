@@ -31,7 +31,7 @@ Last version tested | Terraform 4.1 and azurerm 3.48
 ## Simple config. ❤️
 
 
-<img align="center" alt="img" src="https://raw.githubusercontent.com/wiseupdata/terraform-oci-datalake/main/assets/under_construction.gif" width="100" />
+<img align="center" alt="img" src="https://raw.githubusercontent.com/wiseupdata/terraform-oci-datalake/main/assets/under_construction.gif" width="600" />
 
 
 main.tf
