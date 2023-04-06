@@ -4,7 +4,7 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
+.terraform
 # Crash log files
 crash.log
 
@@ -29,3 +29,4 @@ override.tf.json
 # example: *tfplan*
 terraform.tfvars
 oneclik-deploy.sh
+.terraform.lock.hcl
