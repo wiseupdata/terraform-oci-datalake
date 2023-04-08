@@ -61,7 +61,9 @@ Check the result🏅
 
 ---
 
-![](assets/result.gif)
+<a href="https://github.com/wiseupdata/wiseupdata">
+  <img align="center" alt="wise Up Data" width="80%" src="https://raw.githubusercontent.com/wiseupdata/terraform-oci-datalake/main/assets/result.gif" />
+</a>
 
 ---
 
@@ -69,8 +71,6 @@ Check the result🏅
 
 ```
 terraform destroy -auto-approve
-cd ..
-rm -Rf tmp
 ```
 
 <br>
