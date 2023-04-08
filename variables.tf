@@ -1,3 +1,20 @@
+########################################
+# Required
+########################################
+
+variable "oci_tenancy_ocid" {
+  description = "The OCID of the Oracle Cloud Infrastructure tenancy where resources will be created. This value can be found in the Oracle Cloud Console, under 'Tenancy Details' in the 'Identity' service."
+  type        = string
+}
+
+variable "bucket_namespace" {
+  description = "The namespace for the Oracle Cloud Infrastructure Object Storage service. You can find the namespace value in the Object Storage section of the OCI Console, under 'Details' for the desired bucket or namespace. The namespace is a globally unique string used to identify your Object Storage resources and is often the tenancy name followed by '_namespace' (e.g. 'my-tenancy_namespace')."
+  type        = string
+}
+
+########################################
+# Optional 
+########################################
 variable "company_name" {
   description = "The name of the company."
   type        = string
@@ -14,11 +31,6 @@ variable "compartment_id" {
   description = "The OCID of the compartment where the resources will be created. You can find the compartment ID in the OCI Console by navigating to the compartment where you want to create the resources and copying the OCID from the compartment details page."
   type        = string
   default     = "auto-create"
-}
-
-variable "bucket_namespace" {
-  description = "The namespace for the Oracle Cloud Infrastructure Object Storage service. You can find the namespace value in the Object Storage section of the OCI Console, under 'Details' for the desired bucket or namespace. The namespace is a globally unique string used to identify your Object Storage resources and is often the tenancy name followed by '_namespace' (e.g. 'my-tenancy_namespace')."
-  type        = string
 }
 
 variable "oci_location" {
@@ -51,11 +63,6 @@ variable "layers" {
   description = "Layers for the datalake"
   type        = list(string)
   default     = ["strm", "raw", "trst", "agg", "tmp", "artifacts"] #strm streaming, trst trusted, agg agregated
-}
-
-variable "tenancy_id" {
-  type = string
-
 }
 
 locals {
