@@ -26,21 +26,17 @@ Easy create a Data Lake / Delta Lake!
 Module - Create a Data Lake / Delta Lake 🚀️
 
 </h1>
-Last version tested | Terraform 4.1 and azurerm 3.48
+Last version tested | Terraform 4.1 and oci 4.115
 
 ## Simple config. ❤️
 
-
-<img align="center" alt="img" src="https://raw.githubusercontent.com/wiseupdata/terraform-oci-datalake/main/assets/under_construction.gif" width="600" />
-
-
 main.tf
-
 ```
 module "datalake" {
-  source  = "wiseupdata/datalake/oci"
-  version = "0.0.1"
-  areas = ["data", "sales"]
+  source           = "wiseupdata/datalake/oci"
+  version          = "0.0.1"
+  bucket_namespace = var.bucket_namespace
+  tenancy_ocid     = var.tenancy_ocid
 }
 ```
 
@@ -49,7 +45,7 @@ module "datalake" {
 - Auto-generated tags
 - Auto-generated the compartment
 - Apply's the Standard, environment as suffix
-- All variables are optionals and can be overwrite with a custom value
+- Variables are optionals and can be overwrite with a custom value
 
 ## Config. 2 👋
 
