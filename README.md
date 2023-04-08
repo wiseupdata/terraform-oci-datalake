@@ -37,8 +37,8 @@ Last version tested | Terraform 4.1 and azurerm 3.48
 main.tf
 
 ```
-module "databricks_workspaces" {
-  source  = "wiseupdata/databricks_workspaces/azurerm"
+module "datalake" {
+  source  = "wiseupdata/datalake/oci"
   version = "0.0.1"
   areas = ["data", "sales"]
 }
@@ -47,9 +47,9 @@ module "databricks_workspaces" {
 ## Features ✨️
 
 - Auto-generated tags
-- Auto-generated the resource group
+- Auto-generated the compartment
 - Apply's the Standard, environment as suffix
-- All variables are aptionals and can be overwrite with a custom value
+- All variables are optionals and can be overwrite with a custom value
 
 ## Config. 2 👋
 
