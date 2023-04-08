@@ -5,9 +5,9 @@ variable "company_name" {
 }
 
 variable "app_name" {
-  description = "The name of the application, dbs is the abbreviation to Databricks"
+  description = "The name of the application"
   type        = string
-  default     = "datalake"
+  default     = "dl"
 }
 
 variable "compartment_id" {
@@ -16,12 +16,10 @@ variable "compartment_id" {
   default     = "auto-create"
 }
 
-
 variable "bucket_namespace" {
   description = "The namespace for the Oracle Cloud Infrastructure Object Storage service. You can find the namespace value in the Object Storage section of the OCI Console, under 'Details' for the desired bucket or namespace. The namespace is a globally unique string used to identify your Object Storage resources and is often the tenancy name followed by '_namespace' (e.g. 'my-tenancy_namespace')."
   type        = string
 }
-
 
 variable "oci_location" {
   description = "The region where you want to create your Oracle Cloud Infrastructure resources. This should be a valid Oracle Cloud Infrastructure region identifier (e.g. 'us-phoenix-1', 'eu-frankfurt-1'). If no value is provided, the default value of 'us-ashburn-1' will be used."
@@ -49,6 +47,12 @@ variable "areas" {
   default     = ["data", "sales"]
 }
 
+variable "layers" {
+  description = "Layers for the datalake"
+  type        = list(string)
+  default     = ["strm", "raw", "trst", "agg", "tmp", "artifacts"] #strm streaming, trst trusted, agg agregated
+}
+
 variable "tenancy_id" {
   type = string
 
@@ -67,6 +71,14 @@ locals {
   compartment_name = "cp-${var.app_name}-${var.company_name}-${var.env}"
 
   # Default names for the datalake
-  names = [for i in var.areas : "dl-${var.company_name}-${i}-${var.env}"]
+  names = [for i in var.areas : "${var.app_name}-${var.company_name}-${i}-${var.env}"]
 
+  bucket_layers = distinct(flatten([
+    for bucket in oci_objectstorage_bucket.this : [
+      for layer in var.layers : {
+        bucket = bucket.name
+        layer  = layer
+      }
+    ]
+  ]))
 }

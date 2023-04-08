@@ -19,3 +19,10 @@ resource "oci_objectstorage_bucket" "this" {
 
   freeform_tags = local.basic_tags
 }
+
+resource "oci_objectstorage_object" "this" {
+  for_each  = { for entry in local.bucket_layers : "${entry.bucket}.${entry.layer}" => entry }
+  bucket    = each.value.bucket
+  object    = "${each.value.layer}/"
+  namespace = var.bucket_namespace
+}
