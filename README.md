@@ -47,51 +47,7 @@ module "datalake" {
 - Apply's the Standard, environment as suffix
 - Variables are optionals and can be overwrite with a custom value
 
-## Config. 2 👋
-
-main.tf
-
-```
-module "databricks_workspaces" {
-  source  = "wiseupdata/databricks_workspaces/azurerm"
-  version = "0.0.1"
-  areas   = ["data", "mkt"]
-  existent_rg_name = "your_resource_group_name"
-  company_name = "your_company_name"
-  company_abrv = "your_company_abbreviation"
-}
-```
-
-## Hello world 🎉
-
-> with az cli logged and with the right permissions! `az login` 👀️
-
-Create a new directory.
-
-```
-mkdir tmp && cd tmp 
-```
-
-Create the main file with some infos.
-
-```
-cat <<EOF > main.tf
-module "databricks_workspaces" {
-  source  = "wiseupdata/databricks_workspaces/azurerm"
-  version = "0.0.1"
-}
-
-provider "azurerm" {
-  features {}
-}
-
-output "databricks_workspaces_outputs" {
-  value = module.databricks_workspaces
-}
-EOF
-```
-
-Create the resources in Azure 🤜
+## Create the resources🤜
 
 ```
 terraform init
@@ -105,9 +61,7 @@ Check the result🏅
 
 ---
 
-![](https://raw.githubusercontent.com/wiseupdata/terraform-oci-datalake/main/assets/20230321_212542_image.png)
-
-![](https://raw.githubusercontent.com/wiseupdata/terraform-oci-datalake/main/assets/20230321_211843_image.png)
+![](assets/result.gif)
 
 ---
 
@@ -119,16 +73,8 @@ cd ..
 rm -Rf tmp
 ```
 
-## Config. 3 used in the hello world 🏁
-
-main.tf
-
-```
-module "databricks_workspaces" {
-  source  = "wiseupdata/databricks_workspaces/azurerm"
-  version = "0.0.1"
-}
-```
+<br>
+<br>
 
 # References🤘
 
@@ -138,17 +84,6 @@ module "databricks_workspaces" {
 
 <br>
 
-# Troubleshoot 😕
-
-Recreate a workspace!
-
-```
-# Find all your resources!
-terraform state list 
-
-# Recreate the one with issue
-terraform apply -replace=module.azure_main.module.databricks_workspaces.azurerm_databricks_workspace.this[0]
-```
 
 <br><br>
 ---

@@ -30,3 +30,5 @@ override.tf.json
 terraform.tfvars
 oneclik-deploy.sh
 .terraform.lock.hcl
+plan.out
+plan.out
