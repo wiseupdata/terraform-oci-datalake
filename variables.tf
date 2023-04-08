@@ -2,7 +2,7 @@
 # Required
 ########################################
 
-variable "oci_tenancy_ocid" {
+variable "tenancy_ocid" {
   description = "The OCID of the Oracle Cloud Infrastructure tenancy where resources will be created. This value can be found in the Oracle Cloud Console, under 'Tenancy Details' in the 'Identity' service."
   type        = string
 }
